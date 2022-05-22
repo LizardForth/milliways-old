@@ -1,0 +1,12 @@
+---
+title: "Recipe Index"
+layout: "layouts/list"
+localstyles: ""
+localscript: ""
+---
+<h1>Recipe Index</h1>
+<ul>
+  {% for recipe in collections.recipe %}
+  <li><a href="{{ recipe.url }}">{{ recipe.data.title }}</a></li>
+  {% endfor %}
+</ul>

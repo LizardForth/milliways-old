@@ -1,0 +1,8 @@
+node_modules
+.tmp*
+_site
+.parcel-cache
+dist
+_parcel
+_site_parcel
+_site_eleventy

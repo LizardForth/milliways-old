@@ -1,0 +1,23 @@
+{
+  "name": "milliways",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "build-parcel": "cp .parcelrc _site_eleventy && touch _site_eleventy/.hg && npx parcel build _site_eleventy/index.html --dist-dir _site_parcel --public-url 'milliways.com' --no-cache",
+    "serve": "eleventy --serve",
+    "serve-parcel": "cp .parcelrc _site_eleventy && touch _site_eleventy/.hg && npx parcel serve _site_eleventy/index.html --dist-dir _site_parcel --no-cache",
+    "fmt": "prettier --write '{./,./{src,_assets,static,_includes,_data}/**/}*.{json,md,js,css,scss}'",
+    "clean": "rm -rf _site .tmp_eleventy .parcel-cache dist _parcel _site_eleventy _site_parcel"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "parcel": "^2.5.0",
+    "parcel-optimizer-friendly-urls": "^0.2.0",
+    "posthtml": "^0.16.6",
+    "posthtml-urls": "^1.0.0",
+    "prettier": "^1.19.1",
+    "sass": "^1.51.0",
+    "typescript": "^4.6.4"
+  }
+}
