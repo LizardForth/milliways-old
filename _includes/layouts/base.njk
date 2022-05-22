@@ -18,15 +18,11 @@ localscript: ""
     {% if localstyles %}
       <link rel="stylesheet" href="{{ localstyles | url }}">
     {% endif %}
-
   </head>
   <body>
-    <main>
-      <h1>Base Layout</h1>
+      {% include 'partials/header.njk' %}
       {{ content | safe }}
-    </main>
-    <footer>
-    </footer>
+      {% include 'partials/footer.njk' %}
   </body>
 </html>
 

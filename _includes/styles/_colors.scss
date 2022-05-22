@@ -1,1 +1,54 @@
-$red: magenta;
+$colors: (
+    "blue": #8FBCBB,
+    "red": #BF616A,
+    "orange": #D08770,
+    "purple": #ebb954,
+    "green": #A3BE8C,
+    "yellow": #B48EAD,
+);
+
+$colors_light: (
+    "bg-0": #f2f4f8,    
+    "bg-1": #ffffff,     
+    "ui-0": #434C5E,      
+    "ui-1": #4C566A,       
+    "ui-2": #7b88a1,        
+    "shadow-strong": rgba(184, 194, 215, 0.35),
+    "shadow-weak": rgba(184, 194, 215, 0.30),
+);
+ 
+$colors_dark: (
+  // Dark
+  "bg-0": #242933,          
+  "bg-1": #2e3440,         
+  "ui-0": #eceff4,        
+  "ui-1": #b4b9c2,       
+  "ui-2": #abb9cf,      
+  "shadow-strong": rgba(15, 17, 21, 0.35),
+  "shadow-weak": rgba(15, 17, 21, 0.15),
+);
+
+
+
+:root {
+    @each $name, $code in $colors {
+        --#{$name}: #{$code};
+    }
+
+    @each $name, $code in $colors_light {
+        --#{$name}: #{$code};
+    }
+}
+
+[data-theme="dark"] {
+    @each $name, $code in $colors_dark {
+        --#{$name}: #{$code};
+    }
+}
+
+@each $name, $code in map-merge($colors, map-merge($colors_dark, $colors_light)) {
+    .fill--#{$name} {
+        fill: var(--#{$name});
+    }
+}
+

@@ -1,0 +1,41 @@
+html {
+}
+body {
+    background-color: #ababab;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    & > header, & > nav, & > main, & > footer {
+        width: 100%;
+        max-width: 60rem;
+        margin: 0 auto;
+    }
+
+    & > header { 
+        background-color: #8aa;
+    }
+
+    & > nav {
+        background-color: #8aa;
+    }
+
+
+    & > main {
+        background-color: #a8a;
+        flex: 1;
+    }
+
+    & > footer {
+        background-color: #aa8;
+    }
+
+
+}
+
+
+

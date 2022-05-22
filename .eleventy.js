@@ -13,6 +13,13 @@ module.exports = function(config) {
   config.addPlugin(require("./_11ty/transformScssLinks.js"));
   config.addPlugin(require("./_11ty/transformAppendIndexHtml.js"));
 
+  const eleventyPluginCookLang = require('eleventy-plugin-cooklang');
+  config.addPlugin(eleventyPluginCookLang, {
+    outputHtml: true , // default false
+    //excludeContent: true / false, // default false
+    //limitIngredientDecimals: Integer, // default null
+  });
+
   config.addTemplateFormats(["md", "njk", "html"]);
 
   return {

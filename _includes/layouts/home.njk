@@ -1,5 +1,13 @@
 ---
 layout: "layouts/base.njk"
 ---
-{{ content | safe }}
 
+<section class="hero">
+  <h1>Milliways</h1>
+  <h2>A simple, fast, and powerful recipe website</h2>
+</section>
+
+{% include 'partials/nav.njk' %}
+<main class="home">
+{{ content | safe }}
+</main>
